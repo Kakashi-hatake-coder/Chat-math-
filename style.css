@@ -1,19 +1,24 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #e8f0fe;
 }
 
 .chat-container {
     width: 400px;
     background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
     overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.chat-container:hover {
+    transform: translateY(-10px);
 }
 
 .chat-window {
@@ -28,19 +33,25 @@ body {
 }
 
 .message {
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .message.user {
-    background-color: #d1e7dd;
+    background-color: #c8f7c5;
     align-self: flex-end;
 }
 
 .message.bot {
-    background-color: #f8d7da;
+    background-color: #fddddd;
     align-self: flex-start;
+}
+
+.message.user:hover, .message.bot:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 input, button {
@@ -51,12 +62,25 @@ input, button {
     font-size: 16px;
 }
 
+input {
+    border-radius: 0 0 0 12px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+input:focus {
+    background-color: #f1f1f1;
+}
+
 button {
-    background-color: #28a745;
+    background-color: #007bff;
     color: white;
     cursor: pointer;
+    border-radius: 0 0 12px 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
